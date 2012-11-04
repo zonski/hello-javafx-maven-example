@@ -33,7 +33,7 @@ Get the Example Code
 Either: 
 
 1. Use GIT to checkout the sourcecode for this project to anywhere on your local directory, or  
-2. Download the ZIP file containing the project and extract anywhere on your local directory
+2. Download a ZIP of the source code (hit the "ZIP" button above) and extract anywhere on your local directory
 
 
 Fix the JRE Classpath to include JavaFX 
