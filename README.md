@@ -109,6 +109,10 @@ You definitely should:
 
 If you don't have a company name, use a nickname or working name for yourself, e.g. com.yourname.
 
+Licence
+==============
+
+This example project is distributed under the <a href="http://en.wikipedia.org/wiki/WTFPL">DWTFYL</a> licence. 
 
 
 
