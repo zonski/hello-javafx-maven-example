@@ -33,7 +33,7 @@ Get the Example Code
 Either: 
 
 1. Use GIT to checkout the sourcecode for this project to anywhere on your local directory, or  
-2. Download the ZIP file containing the project and extract anywhere on your local directory
+2. Download a ZIP of the source code (hit the "ZIP" button above) and extract anywhere on your local directory
 
 
 Fix the JRE Classpath to include JavaFX 
@@ -109,6 +109,21 @@ You definitely should:
 
 If you don't have a company name, use a nickname or working name for yourself, e.g. com.yourname.
 
+
+Problems and Support
+=========================================
+
+This example project is distributed as is with no warranty or promise of support. If you have problems your best 
+bet is to probably post on the OTN JavaFX Forum. You can try raising an issue here and I *may* respond but there is
+no guarantee. 
+
+Do NOT email me directly with problems on this example code. You'll go to the spambox.
+
+
+Licence
+=========================================
+
+This example project is distributed under the <a href="http://en.wikipedia.org/wiki/WTFPL">WTFPL</a> licence. 
 
 
 
