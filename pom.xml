@@ -15,14 +15,6 @@
         <slf4j.version>1.6.1</slf4j.version>
     </properties>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>zen-java</id>
-            <name>Zen Java Maven Repo</name>
-            <url>http://zenjava.com/maven-repo/</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <build>
         <plugins>
 
