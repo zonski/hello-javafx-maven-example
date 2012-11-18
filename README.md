@@ -1,12 +1,14 @@
 Hello JavaFX and Maven (Example Project)
 =========================================
 
+*NOTE: I plan to turn this example project into a Maven archetype soon. This project will be obsolete once that happens.*
+
 This is a simple "Hello World" example showing a ready to roll JavaFX project using the 
 <a href="https://github.com/zonski/javafx-maven-plugin">ZenJava JavaFX Maven plugin</a>. This can be downloaded 
 and used as a starter template for your own Maven JavaFX projects.
 
 The demonstration project includes a single module Maven project with example POM and source code. The POM is 
-configured to build both an executable JAR and a native installer (MSI, EXE, RPM, DMG) for your platform. 
+configured to build both an executable JAR, a webstart bundle and a native installer (MSI, EXE, RPM, DMG) for your platform. 
 
 To demonstrate some Maven practices and benefits, the source code also includes a simple FXML example, style sheets, 
 images, and makes use of some third-party dependencies (such as Log4J, MigPane Layout, and Apache Commons). These 
@@ -17,50 +19,26 @@ as needed.
 Setting up
 =========================================
 
-You must have a valid JDK installed with a valid JavaFX installation included in it (i.e. Java 1.7.0 update 9 or 
-higher). Make sure you have your JAVA_HOME set to this installation. See: http://www.oracle.com/technetwork/java/javase/downloads/index.html
+Please refer to the 'Before you start' section of the JavaFX Maven Plugin documentation: 
 
-You must have Maven (3.0 or higher) installed on your system. See http://maven.apache.org/download.html
-
-To build the native installer for your application, you need to also install the relevant native installer library 
-used by JavaFX for your OS (e.g. on Windows, install WiX). See the JavaFX installation steps for info on 
-this: https://blogs.oracle.com/talkingjavadeployment/entry/native_packaging_for_javafx
+* https://github.com/zonski/javafx-maven-plugin/wiki
 
 
 Get the Example Code
 =========================================
 
-Either: 
-
-1. Use GIT to checkout the sourcecode for this project to anywhere on your local directory, or  
-2. Download a ZIP of the source code (hit the "ZIP" button above) and extract anywhere on your local directory
-
-
-Fix the JRE Classpath to include JavaFX 
-=========================================
-
-Open a command line prompt and change directory to wherever you extracted the source code to, then type: 
-
-```
-    mvn jfx:fix-classpath
-```
-
-This only needs to be done once for each development machine. It will copy the JavaFX runtime into the JRE extension
-directory. For more information see: https://github.com/zonski/javafx-maven-plugin
+Download a ZIP of the source code (hit the "ZIP" button above) and extract anywhere on your local directory.
 
 
 Build the Project 
 =========================================
 
-Use the standard Maven commands to compile and run your projects during development (e.g. clean, compile, install). Note
-that Maven will download a lot of third-party dependencies the first time it runs (meaning you don't have to). The first
-run can be slow but subsequent runs will be very fast. If you are new to Maven, see 
+Use the jfx:package command to build your project. Note that Maven will download a lot of third-party dependencies the first time it runs (meaning you don't have to). The first
+run can be slow but subsequent runs will be much faster. If you are new to Maven, see 
 http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
 
-When you are ready to deploy your application use the standard Maven 'package' command: 
-
 ```
-    mvn clean package
+    mvn clean compile jfx:package
 ```
 
 This will be quite slow (e.g. 30 seconds) as it is building the native co-bundled apps into an installer including all 
@@ -69,16 +47,21 @@ third-party JARs.
 Once this command completes successfully you will find an executable JAR at: 
 
 ```
-    {project.home}/target/javafx/your-app-name-jfx.jar
+    {project.home}/target/my-example-app.jar
 ```
 
 This JAR contains your complete application in one bundle and can be distributed directly, on its own (i.e. this one file
 can be copied to any machine that has Java installed and can then be double clicked to run your app).
 
+A webstart bundle will have been assembled in: 
+```
+    {project.home}/target/webstart
+```
+
 Additionally a native bundle will have been assembled in: 
 
 ```
-    {project.home}/target/javafx/bundles
+    {project.home}/target/bundles
 ```
 
 The exact format of the native bundle will depend on the OS you ran your build on i.e. if you built on Windows an MSI
@@ -106,6 +89,7 @@ You definitely should:
 * Change the groupId in the pom.xml to use com.yourcompany instead of com.zenjava
 * Change the artifactId in the pom.xml to be your-project-name instead of hello-jfx-maven-example
 * Change the base package being use for the Java files to be com.yourcompany instead of com.zenjava
+* Change the keystore used to be one that matches your company
 
 If you don't have a company name, use a nickname or working name for yourself, e.g. com.yourname.
 
